@@ -20,11 +20,14 @@ def export_csv(filename, datas):
     print("Export csv data. filename: {}".format(filename))
 
 
+# get your env pkg list
+# [return] list
 def get_pkg_list():
     return sorted(pkg_resources.working_set, key=lambda x: str(x).lower())
 
 
 # get pkg license
+# [return] str
 def get_pkg_license(pkg):
     try:
         lines = pkg.get_metadata_lines('METADATA')
@@ -44,6 +47,7 @@ def get_pkg_license(pkg):
 
 
 # get pkg home page url
+# [return] str
 def get_pkg_home_page(pkg):
     try:
         lines = pkg.get_metadata_lines('METADATA')
@@ -60,6 +64,9 @@ def get_pkg_home_page(pkg):
     return url
 
 
+# get pkg info
+# name | version | license_type | url
+# [return] 2-dimentional list
 def get_pkg_info_list():
     print("Get pkg info list...")
     pkgs = get_pkg_list()
@@ -75,6 +82,8 @@ def get_pkg_info_list():
 
     return info_lists
 
+
+# license check
 def license_check():
     # get pkg info lists
     info_lists = get_pkg_info_list()
