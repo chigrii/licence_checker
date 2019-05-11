@@ -9,9 +9,6 @@ result_list_name = 'pip_lib_licenses.csv'
 csv_save_dir = 'result'
 columns = ["pkg_name", "version", "license", "url"]
 
-req_list = []
-licenses_list = []
-
 
 # export to csv.
 # notice: expected datas type 2-dimensional list
