@@ -1,4 +1,4 @@
-# licence_checker
+# license_checker
 license check tool
 
 ## for python
